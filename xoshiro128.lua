@@ -26,7 +26,7 @@ SOFTWARE.
 About:
 	This is Lua implementation of xoshiro128** PRNG. It was created by me for me to use it in Garry's Mod, however this code should work in just plain Lua.
 	As Lua 5.4 already implements xoshiro128**, this code is aimed mostly for people who are stuck with older version of Lua. xoshiro128** algorithm provides
-	fast and efficient alternative to obsolete C rand function. Major advantages are:
+	fast and efficient alternative for obsolete C rand function. Major advantages are:
 		- You can have multiple generators running concurrently
 		- You can set the seed of the generator without messing with math.randomseed() which affects all subsequent call of math.random()
 
@@ -273,7 +273,7 @@ Based on https://groups.google.com/g/prng/c/VFjdFmbMgZI/m/PXAGifwABwAJ by Sebast
 
 Usage:
 	You shouldn't use it. SplitMix32 is used internally to initialize state of
-	xoshiro256**. It provides bare minimum required only for that.
+	xoshiro128**. It provides bare minimum required only for that.
 
 	Call `SplitMix32()` to get new instance of SplitMix32 PRNG with optional seed
 
