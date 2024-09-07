@@ -112,6 +112,25 @@ print( "VAR="..var )
 ]]
 
 --[[-------------------------------------------------------------------------
+Test float distribution
+---------------------------------------------------------------------------]]
+--[[
+local iterations = 1000000
+local rng = xoshiro128()
+local sum = 0
+
+for i = 1, iterations do
+	sum = sum + rng()
+end
+
+local avg = sum / iterations
+local var = ( avg - 0.5 ) ^ 2 --Uniform distribution have expected value in the middle of interval so E=0.5
+
+print( "TEST FLOAT DISTRIBUTION" )
+print( string.format( "iterations=%i, avg=%f, VAR=%f", iterations, avg, var ) )
+]]
+
+--[[-------------------------------------------------------------------------
 Test same seed
 ---------------------------------------------------------------------------]]
 --[[
