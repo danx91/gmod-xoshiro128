@@ -1,7 +1,7 @@
 # xoshiro128** PRNG Lua implementation
 This is Lua implementation of xoshiro128** PRNG. It was created by me for me to use it in Garry's Mod. This code won't work in plain Lua as it uses some Garry's Mod specific functions and bit library instead of built in bitwise operators. As Lua 5.4 already implements xoshiro256**, this code is aimed mostly to people who are stuck with older version of Lua. xoshiro128** algorithm provides fast and efficient alternative to obsolete C rand function. Major advantages are:
 * You can have multiple generators running concurrently
-* You can set the seed of the generator without messing with math.randomseed() which affects all subsequent call of math.random()
+* You can set the seed of the generator without messing with math.randomseed() which affects all subsequent calls of math.random()
 
 # Few words from the author
 * There is a lot of modulo 2^32 - it used to "simulate" overflow of uint32

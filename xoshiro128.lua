@@ -1,7 +1,7 @@
 --[[-------------------------------------------------------------------------
 MIT License
 
-Copyright (c) 2024 danx91 (https://github.com/danx91)
+Copyright (c) 2024 danx91 (https://github.com/danx91/gmod-xoshiro128)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -20,25 +20,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
----------------------------------------------------------------------------]]
-
---[[-------------------------------------------------------------------------
-About:
-	This is Lua implementation of xoshiro128** PRNG. It was created by me for me to use it in Garry's Mod, however this code should work in just plain Lua.
-	As Lua 5.4 already implements xoshiro128**, this code is aimed mostly for people who are stuck with older version of Lua. xoshiro128** algorithm provides
-	fast and efficient alternative for obsolete C rand function. Major advantages are:
-		- You can have multiple generators running concurrently
-		- You can set the seed of the generator without messing with math.randomseed() which affects all subsequent call of math.random()
-
-Few words from the author:
-	- There is a lot of modulo 2^32 - it used to "simulate" overflow of uint32
-	- I didn't test it on 32 bit build as Lua numbers are internally stored as double and since IEEE 754 standard
-		all doubles are always 64 bit no matter the architecture, so nothing differs
-	- If performance is priority for you, feel free to strip all `assert` calls
-	- This code might not be perfect and might have some flaws so as stated in the license, I don't give any warranty - use this code at your own risk!
-	- Feel free to fork, open issues or open pull requests if you want to improve this code
-	- Algorithm implementation is heavily based on the work of Sebastiano Vigna and David Blackman and their C implementation of xoshiro128**
-		I don't claim any copyrights of any part of their original code
 ---------------------------------------------------------------------------]]
 
 --[[-------------------------------------------------------------------------
@@ -292,7 +273,6 @@ setmetatable( SplitMix32, {
 		} )
 	end
 } )
-
 
 --[[---------------------------------------------------------------------------
 SplitMix32:NextUInt()
