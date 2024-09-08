@@ -50,7 +50,7 @@ print( rng:Next( 100, 200 ) ) --returns number (integer) from 100 (inclusive) to
 
 --other calls
 print( rng:NextUInt() ) --Returns number (integer) between 0 (inclusive) and 2^32-1 (inclusive)
-print( rng:NextInt( -100, 100 ) ) --returns number (integer) from 1 (inclusive) to 10 (inclusive). Note that it's similar to Next() call, but here both arguments are required!
+print( rng:NextInt( -100, 100 ) ) --returns number (integer) from -100 (inclusive) to 100 (inclusive). Note that it's similar to Next() call, but here both arguments are required!
 print( rng:NextFloat() ) --returns number (float) from 0 (inclusive) to 1 (exclusive). Same as calling Next() without arguments
 print( rng:NextBool() ) --returns boolean (true/false)
 ```
