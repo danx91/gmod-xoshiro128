@@ -155,7 +155,7 @@ function xoshiro128:NextUInt()
 	local state = self.state
 	assert( state, "Attempted to call NextUInt on an uninitialized xoshiro128 object!" )
 
-	local result = uint32_rotl( state[2] * 5, 7 ) * 9
+	local result = uint32_rotl( ( state[2] * 5 ) % UINT32_MAX_PLUS_ONE, 7 ) * 9
 	local t = uint32_lshift( state[2], 9 )
 
 	state[3] = uint32_xor( state[3], state[1] )
