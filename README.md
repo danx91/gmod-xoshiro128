@@ -4,7 +4,7 @@ This is Lua implementation of xoshiro128** PRNG. It was created by me for me to 
 * You can set the seed of the generator without messing with math.randomseed() which affects all subsequent calls of math.random()
 
 # Few words from the author
-* There is a lot of modulo 2^32 - it used to "simulate" overflow of uint32
+* There is a lot of modulo 2^32 - it's used to "simulate" overflow of uint32
 * I didn't test it on 32 bit build as Lua numbers are internally stored as double and since IEEE 754 standard all doubles are always 64 bit no matter the architecture, so nothing differs
 * If performance is priority for you, feel free to strip all `assert` calls
 * This code might not be perfect and might have some flaws so as stated in the license, I don't give any warranty - use this code at your own risk!
